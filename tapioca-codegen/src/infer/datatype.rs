@@ -9,7 +9,7 @@ use infer::Error;
 
 type TypeSupportResult = Result<
     (Tokens, Option<Tokens>),
-    Box<Error + Send + Sync>
+    Box<dyn Error + Send + Sync>
 >;
 
 pub(super) fn infer_v3(schema: &Yaml) -> TypeSupportResult {

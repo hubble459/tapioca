@@ -35,7 +35,7 @@ fn impl_schema(schema_url: &str) -> quote::Tokens {
         Err(_) => {
             match parse::fetch_schema(&schema_fname, &schema_url) {
                 Ok(s) => s,
-                Err(e) => panic!("Unable to find schema: {}", e.description()),
+                Err(e) => panic!("Unable to find schema: {}", e.to_string()),
             }
         }
     };

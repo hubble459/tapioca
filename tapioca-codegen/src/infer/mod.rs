@@ -14,7 +14,7 @@ mod schema;
 
 const SCHEMA_VERSION_KEY: &'static str = "openapi";
 
-type InferResult<T> = Result<T, Box<Error + Send + Sync>>;
+type InferResult<T> = Result<T, Box<dyn Error + Send + Sync>>;
 type MaybeTokens = Option<Tokens>;
 type StructBoundArgImpl = InferResult<(MaybeTokens, MaybeTokens, MaybeTokens, MaybeTokens)>;
 type TokensResult = InferResult<Tokens>;

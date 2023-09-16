@@ -7,7 +7,7 @@ use ::yaml_rust::{Yaml, YamlLoader};
 const CACHE_DIR: &'static str = ".tapioca-cache";
 
 type Schema = Yaml;
-type SchemaResult = Result<Schema, Box<Error + Send + Sync>>;
+type SchemaResult = Result<Schema, Box<dyn Error + Send + Sync>>;
 
 fn cache_path(schema_fname: &String) -> String {
     fs::create_dir_all(&CACHE_DIR).unwrap();

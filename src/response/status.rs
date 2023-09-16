@@ -5,7 +5,7 @@ pub use reqwest::StatusCode;
 pub trait Status {
     type OfType;
 
-    fn of(&Option<&Self::OfType>) -> Self;
+    fn of(_: &Option<&Self::OfType>) -> Self;
 
     fn is_ok(&self) -> bool;
     fn is_err(&self) -> bool;

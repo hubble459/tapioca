@@ -12,7 +12,7 @@ pub trait QueryString {
 }
 
 pub trait QueryParameter {
-    fn as_query_kv(&self, &str) -> Vec<QueryPair>;
+    fn as_query_kv(&self, _: &str) -> Vec<QueryPair>;
 }
 
 impl<T: QueryString> QueryString for Option<T> {

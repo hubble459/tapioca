@@ -3,7 +3,7 @@ use response::StatusCode;
 use response::ClientResponse;
 
 pub trait ResponseBody {
-    fn from(&mut Option<&mut ClientResponse>) -> Self;
+    fn from(_: &mut Option<&mut ClientResponse>) -> Self;
 }
 
 // O: ResponseBody, E: ResponseBody c.f. rust-lang/rust#21903

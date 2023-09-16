@@ -13,7 +13,7 @@ pub type ResponseResult<O, E> = Result<O, E>;
 pub trait Response {
     type BodyType: ResponseBody;
 
-    fn from(&mut Option<&mut ClientResponse>) -> Self;
+    fn from(_: &mut Option<&mut ClientResponse>) -> Self;
 
     fn body(self) -> Self::BodyType;
     fn status_code(&self) -> StatusCode;
